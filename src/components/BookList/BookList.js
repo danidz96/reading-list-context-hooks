@@ -9,7 +9,7 @@ const BookList = () => {
 		{ title: 'El Héroe de las Eras', author: 'Brandon Sanderson' }
 	]);
 
-	return <div className={styles.list}>{books.map((book) => <BookItem book={book} key={book.title} />)}</div>;
+	return <ul className={styles.list}>{books.map((book) => <BookItem book={book} key={book.title} />)}</ul>;
 };
 
 export default BookList;

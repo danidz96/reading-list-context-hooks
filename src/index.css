@@ -45,15 +45,14 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	color: var(--color-grey-dark-1);
-	min-height: 100vh;
 }
 
 .App {
 	max-width: 45rem;
 	margin: 30px auto;
-	text-align: center;
 	border-radius: 2rem;
 	overflow: hidden;
 	background: rgb(248, 248, 248);
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
+	min-height: 50vh;
 }

@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import BookItem from '../BookItem/BookItem';
+import styles from './BookList.module.css';
 
 const BookList = () => {
-	return (
-		<div className="book-list">
-			<ul>
-				<li>El imperio final</li>
-				<li>El pozo de la ascensión</li>
-				<li>El Héroe de las eras</li>
-			</ul>
-		</div>
-	);
+	const [ books, setBooks ] = useState([
+		{ title: 'El Imperio Final', author: 'Brandon Sanderson' },
+		{ title: 'El Pozo de la Ascensión', author: 'Brandon Sanderson' },
+		{ title: 'El Héroe de las Eras', author: 'Brandon Sanderson' }
+	]);
+
+	return <div className={styles.list}>{books.map((book) => <BookItem book={book} key={book.title} />)}</div>;
 };
 
 export default BookList;

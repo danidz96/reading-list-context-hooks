@@ -1,0 +1,29 @@
+.book {
+	background: white;
+	padding: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	border-radius: .6rem;
+	box-shadow: var(--shadow-light);
+}
+
+.book:not(:last-child) {
+	margin-bottom: 3rem;
+}
+
+.title {
+	margin-bottom: 1.5rem;
+	font-weight: 600;
+}
+
+.author {
+	font-size: 1rem;
+	font-weight: 200;
+	color: var(--color-grey-dark-2);
+}
+
+.icon {
+	color: var(--color-grey-dark-3);
+	font-size: 1.5rem;
+}

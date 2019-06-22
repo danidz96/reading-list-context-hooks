@@ -6,3 +6,11 @@
 	overflow: hidden;
 	text-align: center;
 }
+
+@media only screen and (max-width: 600px) {
+	.header {
+		margin: 0;
+		width: 100%;
+		border-radius: 0;
+	}
+}

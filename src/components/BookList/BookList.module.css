@@ -1,3 +1,9 @@
 .list {
 	padding: 3rem 2rem;
 }
+
+.addBookBtn {
+	display: flex;
+	justify-content: center;
+	margin-top: 3rem;
+}

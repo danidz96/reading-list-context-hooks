@@ -2,8 +2,8 @@
 
 :root {
 	--color-primary: #3392ff;
-	--color-primary-light: #2fa6eb;
-	--color-primary-dark: #3026ba;
+	--color-primary-light: #36b2ff;
+	--color-primary-dark: #0a7dff;
 
 	--color-grey-light-1: #faf9f9;
 	--color-grey-light-2: #f4f2f2;
@@ -16,6 +16,8 @@
 
 	--shadow-dark: 0 2rem 3rem rgba(0, 0, 0, .15);
 	--shadow-light: 0 2px 1rem rgba(0, 0, 0, 0.15);
+
+	--shadow-blue-dark: 0px 1rem 1rem rgba(51, 146, 255, 0.2);
 
 	--line: 1px solid var(--color-grey-light-2);
 }
@@ -54,4 +56,14 @@ body {
 	overflow: hidden;
 	background-color: white;
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
+	min-height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+	.App {
+		max-width: none;
+		margin: 0;
+		width: 100vw;
+		border-radius: 0;
+	}
 }

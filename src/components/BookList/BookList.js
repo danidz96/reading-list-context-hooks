@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import BookItem from '../BookItem/BookItem';
-import styles from './BookList.module.css';
 import Button from '../Button/Button';
+
+const ButtonContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	margin-top: 3rem;
+`;
+
+const List = styled.ul`padding: 3rem 2rem;`;
 
 const BookList = () => {
 	const [ books, setBooks ] = useState([
@@ -12,10 +20,10 @@ const BookList = () => {
 
 	return (
 		<React.Fragment>
-			<div className={styles.addBookBtn}>
-				<Button />
-			</div>
-			<ul className={styles.list}>{books.map((book) => <BookItem book={book} key={book.title} />)}</ul>;
+			<ButtonContainer>
+				<Button text="Add Book" />
+			</ButtonContainer>
+			<List>{books.map((book) => <BookItem book={book} key={book.title} />)}</List>;
 		</React.Fragment>
 	);
 };

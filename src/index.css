@@ -48,22 +48,3 @@ body {
 	background-repeat: no-repeat;
 	color: var(--color-grey-dark-1);
 }
-
-.App {
-	max-width: 45rem;
-	margin: 30px auto;
-	border-radius: 2rem;
-	overflow: hidden;
-	background-color: white;
-	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
-	min-height: 100vh;
-}
-
-@media only screen and (max-width: 600px) {
-	.App {
-		max-width: none;
-		margin: 0;
-		width: 100vw;
-		border-radius: 0;
-	}
-}

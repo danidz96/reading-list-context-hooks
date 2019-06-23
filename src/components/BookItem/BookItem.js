@@ -1,16 +1,51 @@
 import React from 'react';
-import styles from './BookItem.module.css';
+import styled from 'styled-components';
+
+const BookContainer = styled.div`
+	background: white;
+	padding: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	border-radius: .6rem;
+	box-shadow: var(--shadow-light);
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+`;
+
+const Title = styled.h3`
+	margin-bottom: 1.5rem;
+	font-weight: 600;
+`;
+
+const Author = styled.p`
+	font-size: 1rem;
+	font-weight: 200;
+	color: var(--color-grey-dark-2);
+`;
+
+const Icon = styled.i`
+	color: var(--color-grey-dark-3);
+	font-size: 1.5rem;
+
+	&:hover {
+		cursor: pointer;
+		color: #b40000;
+	}
+`;
 
 const BookItem = (props) => {
 	const { book } = props;
 	return (
-		<div className={styles.book}>
-			<div className="book-data">
-				<h3 className={styles.title}>{book.title}</h3>
-				<p className={styles.author}>{book.author}</p>
+		<BookContainer>
+			<div>
+				<Title>{book.title}</Title>
+				<Author>{book.author}</Author>
 			</div>
-			<i className={`fa fa-trash-o ${styles.icon}`} />
-		</div>
+			<Icon className="fa fa-trash-o" />
+		</BookContainer>
 	);
 };
 

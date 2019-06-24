@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const BookContainer = styled.div`
 	background: white;
@@ -9,6 +10,7 @@ const BookContainer = styled.div`
 	align-items: flex-end;
 	border-radius: .6rem;
 	box-shadow: var(--shadow-light);
+	background-color: ${({ theme }) => (theme.isLightTheme ? theme.light.bg : theme.dark.bg)};
 
 	&:not(:last-child) {
 		margin-bottom: 3rem;
@@ -18,6 +20,7 @@ const BookContainer = styled.div`
 const Title = styled.h3`
 	margin-bottom: 1.5rem;
 	font-weight: 600;
+	color: ${({ theme }) => (theme.isLightTheme ? theme.light.syntax : theme.dark.syntax)};
 `;
 
 const Author = styled.p`
@@ -37,11 +40,12 @@ const Icon = styled.i`
 `;
 
 const BookItem = (props) => {
+	const theme = React.useContext(ThemeContext);
 	const { book } = props;
 	return (
-		<BookContainer>
+		<BookContainer theme={theme}>
 			<div>
-				<Title>{book.title}</Title>
+				<Title theme={theme}>{book.title}</Title>
 				<Author>{book.author}</Author>
 			</div>
 			<Icon className="fa fa-trash-o" />

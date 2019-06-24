@@ -14,7 +14,6 @@ const ButtonContainer = styled.div`
 const List = styled.ul`padding: 3rem 2rem;`;
 
 const BookList = (props) => {
-	const { isLightTheme, light, dark } = React.useContext(ThemeContext);
 	const [ books, setBooks ] = useState([
 		{ title: 'El Imperio Final', author: 'Brandon Sanderson' },
 		{ title: 'El Pozo de la Ascensión', author: 'Brandon Sanderson' },
@@ -26,7 +25,7 @@ const BookList = (props) => {
 			<ButtonContainer>
 				<Button text="Add Book" />
 			</ButtonContainer>
-			<List>{books.map((book) => <BookItem book={book} key={book.title} />)}</List>;
+			<List>{books.map((book) => <BookItem book={book} key={book.title} />)}</List>
 		</React.Fragment>
 	);
 };

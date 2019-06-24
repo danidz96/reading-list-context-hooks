@@ -22,7 +22,7 @@ const AppContainer = styled.div`
 `;
 
 const App = () => {
-	const theme = React.useContext(ThemeContext);
+	const { theme } = React.useContext(ThemeContext);
 	return (
 		<AppContainer theme={theme}>
 			<Header />

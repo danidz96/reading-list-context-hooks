@@ -9,6 +9,7 @@ const HeaderContainer = styled.div`
 	border-radius: 2rem;
 	overflow: hidden;
 	text-align: center;
+	position: relative;
 
 	@media only screen and (max-width: 600px) {
 		margin: 0;
@@ -17,10 +18,18 @@ const HeaderContainer = styled.div`
 	}
 `;
 
+const ThemeSwitcherContainer = styled.div`
+	position: absolute;
+	right: 2rem;
+	top: 2rem;
+`;
+
 const Header = () => {
 	return (
 		<HeaderContainer>
-			<ThemeSwitcher />
+			<ThemeSwitcherContainer>
+				<ThemeSwitcher />
+			</ThemeSwitcherContainer>
 			<h1>Reading List</h1>
 			<p>Currently you have 3 books to read</p>
 		</HeaderContainer>

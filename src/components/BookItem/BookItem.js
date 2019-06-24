@@ -40,7 +40,7 @@ const Icon = styled.i`
 `;
 
 const BookItem = (props) => {
-	const theme = React.useContext(ThemeContext);
+	const { theme } = React.useContext(ThemeContext);
 	const { book } = props;
 	return (
 		<BookContainer theme={theme}>

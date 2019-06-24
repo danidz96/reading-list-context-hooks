@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
 const HeaderContainer = styled.div`
 	padding: 3rem;
@@ -19,6 +20,7 @@ const HeaderContainer = styled.div`
 const Header = () => {
 	return (
 		<HeaderContainer>
+			<ThemeSwitcher />
 			<h1>Reading List</h1>
 			<p>Currently you have 3 books to read</p>
 		</HeaderContainer>

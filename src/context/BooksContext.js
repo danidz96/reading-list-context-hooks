@@ -9,12 +9,33 @@ const BooksContextProvider = (props) => {
 		{ id: 3, title: 'El Héroe de las Eras', author: 'Brandon Sanderson' }
 	]);
 
+	const [ modal, setModal ] = useState({
+		isOpen: false
+	});
+
+	const saveBook = (book) => {
+		setBooks([ ...books, { id: books.length + 1, ...book } ]);
+		console.log(books);
+	};
+
 	const deleteBook = (selectedBook) => {
 		const newBooks = books.filter((book) => selectedBook.id !== book.id);
 		setBooks(newBooks);
 	};
 
-	return <BooksContext.Provider value={{ books, deleteBook }}>{props.children}</BooksContext.Provider>;
+	const openModal = () => {
+		setModal({ isOpen: true });
+	};
+
+	const closeModal = () => {
+		setModal({ isOpen: false });
+	};
+
+	return (
+		<BooksContext.Provider value={{ books, deleteBook, saveBook, modal, openModal, closeModal }}>
+			{props.children}
+		</BooksContext.Provider>
+	);
 };
 
 export default BooksContextProvider;

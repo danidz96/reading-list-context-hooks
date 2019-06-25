@@ -9,7 +9,7 @@ const StyledButton = styled.button`
 	outline: 0;
 	display: inline-block;
 	position: relative;
-	padding: 1.5rem 3rem;
+	padding: 1.2rem 2.5rem;
 	top: 0;
 	color: #fff;
 	font-size: 1.4rem;
@@ -38,7 +38,7 @@ const StyledButton = styled.button`
 `;
 
 const Button = (props) => {
-	return <StyledButton>{props.text}</StyledButton>;
+	return <StyledButton {...props}>{props.text}</StyledButton>;
 };
 
 export default Button;

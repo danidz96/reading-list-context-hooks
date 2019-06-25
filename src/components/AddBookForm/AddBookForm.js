@@ -77,6 +77,10 @@ const AddBookForm = () => {
 	const onSubmit = (e) => {
 		e.preventDefault();
 		saveBook(book);
+		setBook({
+			title: '',
+			author: ''
+		});
 	};
 
 	return (

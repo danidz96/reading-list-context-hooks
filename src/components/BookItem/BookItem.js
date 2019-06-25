@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ThemeContext } from '../../context/ThemeContext';
+import { BooksContext } from '../../context/BooksContext';
 
 const BookContainer = styled.div`
 	background: white;
@@ -41,10 +42,11 @@ const Icon = styled.i`
 
 const BookItem = (props) => {
 	const { theme } = React.useContext(ThemeContext);
+	const { deleteBook } = React.useContext(BooksContext);
 	const { book } = props;
 
 	const handleDeleteBook = () => {
-		props.handleDeleteBook(book);
+		deleteBook(book);
 	};
 
 	return (
@@ -53,7 +55,7 @@ const BookItem = (props) => {
 				<Title theme={theme}>{book.title}</Title>
 				<Author>{book.author}</Author>
 			</div>
-			<Icon className="fa fa-trash-o" onClick={(e) => handleDeleteBook()} />
+			<Icon className="fa fa-trash-o" onClick={() => handleDeleteBook()} />
 		</BookContainer>
 	);
 };

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Header from './components/Header/Header';
 import BookList from './components/BookList/BookList';
 import { ThemeContext } from '../src/context/ThemeContext';
+import BooksContextProvider from './context/BooksContext';
 
 const AppContainer = styled.div`
 	max-width: 45rem;
@@ -25,8 +26,10 @@ const App = () => {
 	const { theme } = React.useContext(ThemeContext);
 	return (
 		<AppContainer theme={theme}>
-			<Header />
-			<BookList />
+			<BooksContextProvider>
+				<Header />
+				<BookList />
+			</BooksContextProvider>
 		</AppContainer>
 	);
 };

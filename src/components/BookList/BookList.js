@@ -9,7 +9,6 @@ const ButtonContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	margin-top: 3rem;
-	background-color: ${(props) => props.isLightTheme && 'red'};
 `;
 
 const List = styled.ul`padding: 3rem 2rem;`;

@@ -15,7 +15,7 @@ const BooksContextProvider = (props) => {
 
 	const saveBook = (book) => {
 		setBooks([ ...books, { id: books.length + 1, ...book } ]);
-		console.log(books);
+		setModal({ isOpen: false });
 	};
 
 	const deleteBook = (selectedBook) => {

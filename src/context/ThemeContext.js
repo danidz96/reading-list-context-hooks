@@ -5,8 +5,20 @@ export const ThemeContext = createContext();
 const ThemeContextProvider = (props) => {
 	const [ theme, setTheme ] = useState({
 		isLightTheme: true,
-		light: { ui: 'white', bg: 'white', syntax: 'var(--color-grey-dark-1)', syntaxAlt: 'var(--color-grey-dark-2)' },
-		dark: { ui: '#253341', bg: '#15202B', syntax: 'white', syntaxAlt: 'var(--color-grey-dark-2)' }
+		light: {
+			ui: 'white',
+			bg: 'white',
+			syntax: 'var(--color-grey-dark-1)',
+			syntaxAlt: 'var(--color-grey-dark-2)',
+			borderColor: 'var(--color-grey-light-4)'
+		},
+		dark: {
+			ui: '#253341',
+			bg: '#15202B',
+			syntax: 'white',
+			syntaxAlt: 'var(--color-grey-dark-2)',
+			borderColor: 'var(--color-grey-dark-1)'
+		}
 	});
 
 	const toggleTheme = () => {

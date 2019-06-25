@@ -42,13 +42,18 @@ const Icon = styled.i`
 const BookItem = (props) => {
 	const { theme } = React.useContext(ThemeContext);
 	const { book } = props;
+
+	const handleDeleteBook = () => {
+		props.handleDeleteBook(book);
+	};
+
 	return (
 		<BookContainer theme={theme}>
 			<div>
 				<Title theme={theme}>{book.title}</Title>
 				<Author>{book.author}</Author>
 			</div>
-			<Icon className="fa fa-trash-o" />
+			<Icon className="fa fa-trash-o" onClick={(e) => handleDeleteBook()} />
 		</BookContainer>
 	);
 };

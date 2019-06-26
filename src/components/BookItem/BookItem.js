@@ -26,7 +26,7 @@ const Title = styled.h3`
 
 const Author = styled.p`
 	font-size: 1rem;
-	font-weight: 200;
+	font-weight: 400;
 	color: var(--color-grey-dark-2);
 `;
 

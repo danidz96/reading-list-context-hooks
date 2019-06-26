@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
+import { BooksContext } from '../../context/BooksContext';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const HeaderContainer = styled.div`
 	padding: 3rem;
@@ -25,13 +27,14 @@ const ThemeSwitcherContainer = styled.div`
 `;
 
 const Header = () => {
+	const { books } = React.useContext(BooksContext);
 	return (
 		<HeaderContainer>
 			<ThemeSwitcherContainer>
 				<ThemeSwitcher />
 			</ThemeSwitcherContainer>
 			<h1>Reading List</h1>
-			<p>Currently you have 3 books to read</p>
+			<p>Currently you have {books.length} books to read</p>
 		</HeaderContainer>
 	);
 };

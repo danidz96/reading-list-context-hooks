@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header/Header';
 import BookList from './components/BookList/BookList';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { ThemeContext } from '../src/context/ThemeContext';
 import BooksContextProvider from './context/BooksContext';
 
@@ -25,12 +26,16 @@ const AppContainer = styled.div`
 const App = () => {
 	const { theme } = React.useContext(ThemeContext);
 	return (
-		<AppContainer theme={theme}>
-			<BooksContextProvider>
-				<Header />
-				<BookList />
-			</BooksContextProvider>
-		</AppContainer>
+		<Router>
+			<AppContainer theme={theme}>
+				<BooksContextProvider>
+					<Header />
+					<Route exact path={'/'} component={BookList} />
+					<Route exact path={'/completed'} component={BookList} />
+					<Route exact path={'/favorites'} component={BookList} />
+				</BooksContextProvider>
+			</AppContainer>
+		</Router>
 	);
 };
 

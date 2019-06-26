@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 import { BooksContext } from '../../context/BooksContext';
-import { ThemeContext } from '../../context/ThemeContext';
+import Navbar from '../Navbar/Navbar';
 
 const HeaderContainer = styled.div`
-	padding: 3rem;
+	padding: 3rem 3rem 1rem 3rem;
 	background-color: var(--color-primary);
 	color: white;
 	border-radius: 2rem;
@@ -35,6 +35,7 @@ const Header = () => {
 			</ThemeSwitcherContainer>
 			<h1>Reading List</h1>
 			<p>Currently you have {books.length} books to read</p>
+			<Navbar />
 		</HeaderContainer>
 	);
 };

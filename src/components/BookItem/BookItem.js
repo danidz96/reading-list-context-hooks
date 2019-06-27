@@ -33,10 +33,19 @@ const Author = styled.p`
 const Icon = styled.i`
 	color: var(--color-grey-dark-3);
 	font-size: 1.5rem;
+	transition: transform ease .2s;
+
+	&:not(:last-child) {
+		margin-right: 1rem;
+	}
 
 	&:hover {
 		cursor: pointer;
 		color: #b40000;
+	}
+
+	&:active {
+		transform: scale(1.3);
 	}
 `;
 
@@ -55,7 +64,12 @@ const BookItem = (props) => {
 				<Title theme={theme}>{book.title}</Title>
 				<Author>{book.author}</Author>
 			</div>
-			<Icon className="fa fa-trash-o" onClick={() => handleDeleteBook()} />
+			<div>
+				<Icon className="fa fa-heart" />
+				<Icon className="fa fa-check" />
+				<Icon className="fa fa-bookmark" />
+				<Icon className="fa fa-trash-o" onClick={() => handleDeleteBook()} />
+			</div>
 		</BookContainer>
 	);
 };

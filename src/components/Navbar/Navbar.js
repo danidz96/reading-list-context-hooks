@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavbarContainer = styled.ul`
 	display: flex;
@@ -24,25 +24,23 @@ const activeStyles = {
 
 const Navbar = () => {
 	return (
-		<BrowserRouter>
-			<NavbarContainer>
-				<Li>
-					<StyledLink activeStyle={activeStyles} exact to="/">
-						Pending
-					</StyledLink>
-				</Li>
-				<Li>
-					<StyledLink activeStyle={activeStyles} activeClassName="active" to="/completed">
-						Completed
-					</StyledLink>
-				</Li>
-				<Li>
-					<StyledLink activeStyle={activeStyles} activeClassName="active" to="/favorites">
-						Favorites
-					</StyledLink>
-				</Li>
-			</NavbarContainer>
-		</BrowserRouter>
+		<NavbarContainer>
+			<Li>
+				<StyledLink activeStyle={activeStyles} exact to="/">
+					Pending
+				</StyledLink>
+			</Li>
+			<Li>
+				<StyledLink activeStyle={activeStyles} activeClassName="active" to="/completed">
+					Completed
+				</StyledLink>
+			</Li>
+			<Li>
+				<StyledLink activeStyle={activeStyles} activeClassName="active" to="/favorites">
+					Favorites
+				</StyledLink>
+			</Li>
+		</NavbarContainer>
 	);
 };
 

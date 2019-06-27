@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header/Header';
+import AddButton from './components/AddButton/AddButton';
 import BookList from './components/BookList/BookList';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { ThemeContext } from '../src/context/ThemeContext';
@@ -30,6 +31,7 @@ const App = () => {
 			<AppContainer theme={theme}>
 				<BooksContextProvider>
 					<Header />
+					<AddButton />
 					<Route exact path={'/'} component={BookList} />
 					<Route exact path={'/completed'} component={BookList} />
 					<Route exact path={'/favorites'} component={BookList} />

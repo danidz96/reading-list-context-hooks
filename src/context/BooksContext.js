@@ -4,9 +4,46 @@ export const BooksContext = createContext();
 
 const BooksContextProvider = (props) => {
 	const [ books, setBooks ] = useState([
-		{ id: 1, title: 'El Imperio Final', author: 'Brandon Sanderson' },
-		{ id: 2, title: 'El Pozo de la Ascensión', author: 'Brandon Sanderson' },
-		{ id: 3, title: 'El Héroe de las Eras', author: 'Brandon Sanderson' }
+		{
+			id: 1,
+			title: 'The Final Empire',
+			author: 'Brandon Sanderson',
+			completed: true,
+			favorite: true,
+			reading: false
+		},
+		{
+			id: 2,
+			title: 'The Well of Ascension',
+			author: 'Brandon Sanderson',
+			completed: true,
+			favorite: true,
+			reading: false
+		},
+		{
+			id: 3,
+			title: 'The Hero of Ages',
+			author: 'Brandon Sanderson',
+			completed: true,
+			favorite: true,
+			reading: true
+		},
+		{
+			id: 4,
+			title: 'The Alloy of Law',
+			author: 'Brandon Sanderson',
+			completed: false,
+			favorite: false,
+			reading: false
+		},
+		{
+			id: 5,
+			title: 'Shadows of Self',
+			author: 'Brandon Sanderson',
+			completed: false,
+			favorite: false,
+			reading: false
+		}
 	]);
 
 	const [ modal, setModal ] = useState({

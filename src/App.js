@@ -32,9 +32,13 @@ const App = () => {
 				<BooksContextProvider>
 					<Header />
 					<AddButton />
-					<Route exact path={'/'} component={BookList} />
-					<Route exact path={'/completed'} component={BookList} />
-					<Route exact path={'/favorites'} component={BookList} />
+					<Route exact path={'/'} component={(props) => <BookList {...props} status="pending" />} />
+					<Route
+						exact
+						path={'/completed'}
+						component={(props) => <BookList {...props} status="completed" />}
+					/>
+					<Route exact path={'/favorites'} component={(props) => <BookList {...props} status="favorite" />} />
 				</BooksContextProvider>
 			</AppContainer>
 		</Router>

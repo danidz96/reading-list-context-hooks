@@ -10,7 +10,8 @@ const BooksContextProvider = (props) => {
 			author: 'Brandon Sanderson',
 			completed: true,
 			favorite: true,
-			reading: false
+			reading: false,
+			pending: false
 		},
 		{
 			id: 2,
@@ -18,7 +19,8 @@ const BooksContextProvider = (props) => {
 			author: 'Brandon Sanderson',
 			completed: true,
 			favorite: true,
-			reading: false
+			reading: false,
+			pending: false
 		},
 		{
 			id: 3,
@@ -26,7 +28,8 @@ const BooksContextProvider = (props) => {
 			author: 'Brandon Sanderson',
 			completed: true,
 			favorite: true,
-			reading: true
+			reading: true,
+			pending: false
 		},
 		{
 			id: 4,
@@ -34,7 +37,8 @@ const BooksContextProvider = (props) => {
 			author: 'Brandon Sanderson',
 			completed: false,
 			favorite: false,
-			reading: false
+			reading: false,
+			pending: true
 		},
 		{
 			id: 5,
@@ -42,7 +46,8 @@ const BooksContextProvider = (props) => {
 			author: 'Brandon Sanderson',
 			completed: false,
 			favorite: false,
-			reading: false
+			reading: false,
+			pending: true
 		}
 	]);
 

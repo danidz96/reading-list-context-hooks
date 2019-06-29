@@ -85,8 +85,6 @@ const AddBookForm = (props) => {
 		});
 	};
 
-	// console.log(props.status);
-
 	return (
 		<Wrapper>
 			<StyledModal

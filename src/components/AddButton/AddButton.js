@@ -10,7 +10,7 @@ const ButtonContainer = styled.div`
 	margin-top: 3rem;
 `;
 
-const AddButton = () => {
+const AddButton = (props) => {
 	const { openModal } = React.useContext(BooksContext);
 
 	const handleAddBook = (e) => {
@@ -20,7 +20,7 @@ const AddButton = () => {
 	return (
 		<ButtonContainer>
 			<Button text="Add Book" onClick={handleAddBook} />
-			<AddBookForm />
+			<AddBookForm status={props.status} />
 		</ButtonContainer>
 	);
 };

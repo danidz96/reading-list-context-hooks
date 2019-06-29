@@ -58,12 +58,13 @@ const StyledForm = styled.form`
 
 Modal.setAppElement('#modal');
 
-const AddBookForm = () => {
+const AddBookForm = (props) => {
 	const { theme } = React.useContext(ThemeContext);
 	const { modal, closeModal, saveBook } = React.useContext(BooksContext);
 	const [ book, setBook ] = useState({
 		title: '',
-		author: ''
+		author: '',
+		status: []
 	});
 
 	const handleCloseModal = () => {
@@ -71,7 +72,7 @@ const AddBookForm = () => {
 	};
 
 	const onChange = (input) => {
-		setBook({ ...book, [input.name]: input.value });
+		setBook({ ...book, [input.name]: input.value, status: [ props.status ] });
 	};
 
 	const onSubmit = (e) => {
@@ -83,6 +84,8 @@ const AddBookForm = () => {
 			status: []
 		});
 	};
+
+	// console.log(props.status);
 
 	return (
 		<Wrapper>

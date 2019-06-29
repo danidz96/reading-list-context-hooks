@@ -51,7 +51,7 @@ const Icon = styled.i`
 
 const BookItem = (props) => {
 	const { theme } = React.useContext(ThemeContext);
-	const { deleteBook } = React.useContext(BooksContext);
+	const { deleteBook, addStatus } = React.useContext(BooksContext);
 	const { book } = props;
 
 	const handleDeleteBook = () => {
@@ -65,10 +65,10 @@ const BookItem = (props) => {
 				<Author>{book.author}</Author>
 			</div>
 			<div>
-				<Icon className="fa fa-heart" />
-				<Icon className="fa fa-check" />
-				<Icon className="fa fa-bookmark" />
-				<Icon className="fa fa-trash-o" onClick={() => handleDeleteBook()} />
+				<Icon className="fa fa-heart" title="Favorite" onClick={() => addStatus(book, 'favorite')} />
+				<Icon className="fa fa-check" title="Completed" onClick={() => addStatus(book, 'completed')} />
+				<Icon className="fa fa-bookmark" title="Reading" onClick={() => addStatus(book, 'reading')} />
+				<Icon className="fa fa-trash-o" title="Delete" onClick={() => handleDeleteBook()} />
 			</div>
 		</BookContainer>
 	);

@@ -58,8 +58,12 @@ const BooksContextProvider = (props) => {
 		setModal({ isOpen: false });
 	};
 
+	const addStatus = (book, status) => {
+		book.status.push(status);
+	};
+
 	return (
-		<BooksContext.Provider value={{ books, deleteBook, saveBook, modal, openModal, closeModal }}>
+		<BooksContext.Provider value={{ books, deleteBook, saveBook, modal, openModal, closeModal, addStatus }}>
 			{props.children}
 		</BooksContext.Provider>
 	);

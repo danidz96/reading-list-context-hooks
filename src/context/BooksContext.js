@@ -8,19 +8,13 @@ const BooksContextProvider = (props) => {
 			id: 1,
 			title: 'The Final Empire',
 			author: 'Brandon Sanderson',
-			completed: true,
-			favorite: true,
-			reading: false,
-			pending: false
+			status: [ 'completed', 'favorite' ]
 		},
 		{
 			id: 2,
 			title: 'The Well of Ascension',
 			author: 'Brandon Sanderson',
-			completed: true,
-			favorite: true,
-			reading: false,
-			pending: false
+			status: [ 'completed' ]
 		},
 		{
 			id: 3,
@@ -29,7 +23,8 @@ const BooksContextProvider = (props) => {
 			completed: true,
 			favorite: true,
 			reading: true,
-			pending: false
+			pending: false,
+			status: [ 'reading' ]
 		},
 		{
 			id: 4,
@@ -38,7 +33,8 @@ const BooksContextProvider = (props) => {
 			completed: false,
 			favorite: false,
 			reading: false,
-			pending: true
+			pending: true,
+			status: [ 'pending' ]
 		},
 		{
 			id: 5,
@@ -47,7 +43,8 @@ const BooksContextProvider = (props) => {
 			completed: false,
 			favorite: false,
 			reading: false,
-			pending: true
+			pending: true,
+			status: [ 'pending' ]
 		}
 	]);
 

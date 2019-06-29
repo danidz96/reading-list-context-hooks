@@ -79,7 +79,8 @@ const AddBookForm = () => {
 		saveBook(book);
 		setBook({
 			title: '',
-			author: ''
+			author: '',
+			status: []
 		});
 	};
 

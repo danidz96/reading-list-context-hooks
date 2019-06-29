@@ -2,14 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import BookItem from '../BookItem/BookItem';
 import { BooksContext } from '../../context/BooksContext';
+import AddButton from '../AddButton/AddButton';
 
 const List = styled.ul`padding: 3rem 2rem;`;
 
 const BookList = (props) => {
 	const { books } = React.useContext(BooksContext);
-	const filteredBooks = books.filter((book) => book[props.status]);
+	const filteredBooks = books.filter((book) => book.status.includes(props.status));
 
-	return <List>{filteredBooks.map((book) => <BookItem book={book} key={book.id} />)}</List>;
+	return (
+		<React.Fragment>
+			<AddButton />
+			<List>{filteredBooks.map((book) => <BookItem book={book} key={book.id} />)}</List>
+		</React.Fragment>
+	);
 };
 
 export default BookList;

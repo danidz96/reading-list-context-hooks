@@ -20,30 +20,18 @@ const BooksContextProvider = (props) => {
 			id: 3,
 			title: 'The Hero of Ages',
 			author: 'Brandon Sanderson',
-			completed: true,
-			favorite: true,
-			reading: true,
-			pending: false,
 			status: [ 'reading' ]
 		},
 		{
 			id: 4,
 			title: 'The Alloy of Law',
 			author: 'Brandon Sanderson',
-			completed: false,
-			favorite: false,
-			reading: false,
-			pending: true,
 			status: [ 'pending' ]
 		},
 		{
 			id: 5,
 			title: 'Shadows of Self',
 			author: 'Brandon Sanderson',
-			completed: false,
-			favorite: false,
-			reading: false,
-			pending: true,
 			status: [ 'pending' ]
 		}
 	]);

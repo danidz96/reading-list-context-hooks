@@ -67,7 +67,7 @@ const BookItem = (props) => {
 			<div>
 				<Icon className="fa fa-heart" title="Favorite" onClick={() => addStatus(book, 'favorite')} />
 				<Icon className="fa fa-check" title="Completed" onClick={() => addStatus(book, 'completed')} />
-				<Icon className="fa fa-bookmark" title="Reading" onClick={() => addStatus(book, 'reading')} />
+				<Icon className="fa fa-eye" title="Reading" onClick={() => addStatus(book, 'reading')} />
 				<Icon className="fa fa-trash-o" title="Delete" onClick={() => handleDeleteBook()} />
 			</div>
 		</BookContainer>

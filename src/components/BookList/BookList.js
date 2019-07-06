@@ -8,7 +8,9 @@ const List = styled.ul`padding: 3rem 2rem;`;
 
 const BookList = (props) => {
 	const { books } = React.useContext(BooksContext);
-	const filteredBooks = books.filter((book) => book.status.includes(props.status));
+	const filteredBooks = books.filter(
+		(book) => book.status.includes(props.status) || book.favorite === props.status.favorite
+	);
 
 	return (
 		<React.Fragment>

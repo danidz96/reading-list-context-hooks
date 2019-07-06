@@ -36,7 +36,11 @@ const App = () => {
 						path={'/completed'}
 						component={(props) => <BookList {...props} status="completed" />}
 					/>
-					<Route exact path={'/favorites'} component={(props) => <BookList {...props} status="favorite" />} />
+					<Route
+						exact
+						path={'/favorites'}
+						component={(props) => <BookList {...props} status={{ favorite: true }} />}
+					/>
 				</BooksContextProvider>
 			</AppContainer>
 		</Router>

@@ -36,6 +36,7 @@ const App = () => {
 						path={'/completed'}
 						component={(props) => <BookList {...props} status="completed" />}
 					/>
+					<Route exact path={'/reading'} component={(props) => <BookList {...props} status="reading" />} />
 					<Route
 						exact
 						path={'/favorites'}

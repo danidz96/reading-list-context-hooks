@@ -31,6 +31,11 @@ const Navbar = () => {
 				</StyledLink>
 			</Li>
 			<Li>
+				<StyledLink activeStyle={activeStyles} activeClassName="active" to="/reading">
+					Reading
+				</StyledLink>
+			</Li>
+			<Li>
 				<StyledLink activeStyle={activeStyles} activeClassName="active" to="/completed">
 					Completed
 				</StyledLink>

@@ -28,13 +28,14 @@ const ThemeSwitcherContainer = styled.div`
 
 const Header = () => {
 	const { books } = React.useContext(BooksContext);
+	const pendingBooks = books.filter((book) => book.status === 'pending').length;
 	return (
 		<HeaderContainer>
 			<ThemeSwitcherContainer>
 				<ThemeSwitcher />
 			</ThemeSwitcherContainer>
 			<h1>Reading List</h1>
-			<p>Currently you have {books.length} books to read</p>
+			<p>Currently you have {pendingBooks} books to read</p>
 			<Navbar />
 		</HeaderContainer>
 	);

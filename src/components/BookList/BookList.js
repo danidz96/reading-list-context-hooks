@@ -14,7 +14,7 @@ const BookList = (props) => {
 
 	return (
 		<React.Fragment>
-			<AddButton status={props.status} />
+			{!props.status.favorite && <AddButton status={props.status} />}
 			<List>{filteredBooks.map((book) => <BookItem book={book} key={book.id} />)}</List>
 		</React.Fragment>
 	);

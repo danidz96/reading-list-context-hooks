@@ -64,7 +64,8 @@ const AddBookForm = (props) => {
 	const [ book, setBook ] = useState({
 		title: '',
 		author: '',
-		status: []
+		status: '',
+		favorite: false
 	});
 
 	const handleCloseModal = () => {
@@ -81,7 +82,8 @@ const AddBookForm = (props) => {
 		setBook({
 			title: '',
 			author: '',
-			status: []
+			status: '',
+			favorite: false
 		});
 	};
 

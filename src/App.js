@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header/Header';
 import BookList from './components/BookList/BookList';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeContext } from '../src/context/ThemeContext';
 import BooksContextProvider from './context/BooksContext';
 
@@ -26,7 +26,7 @@ const AppContainer = styled.div`
 const App = () => {
 	const { theme } = React.useContext(ThemeContext);
 	return (
-		<Router basename={process.env.PUBLIC_URL}>
+		<Switch>
 			<AppContainer theme={theme}>
 				<BooksContextProvider>
 					<Header />
@@ -44,7 +44,7 @@ const App = () => {
 					/>
 				</BooksContextProvider>
 			</AppContainer>
-		</Router>
+		</Switch>
 	);
 };
 

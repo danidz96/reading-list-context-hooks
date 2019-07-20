@@ -26,25 +26,31 @@ const AppContainer = styled.div`
 const App = () => {
 	const { theme } = React.useContext(ThemeContext);
 	return (
-		<Switch>
-			<AppContainer theme={theme}>
-				<BooksContextProvider>
-					<Header />
-					<Route exact path={'/'} component={(props) => <BookList {...props} status="pending" />} />
-					<Route
-						exact
-						path={'/completed'}
-						component={(props) => <BookList {...props} status="completed" />}
-					/>
-					<Route exact path={'/reading'} component={(props) => <BookList {...props} status="reading" />} />
-					<Route
-						exact
-						path={'/favorites'}
-						component={(props) => <BookList {...props} status={{ favorite: true }} />}
-					/>
-				</BooksContextProvider>
-			</AppContainer>
-		</Switch>
+		<Router>
+			<Switch>
+				<AppContainer theme={theme}>
+					<BooksContextProvider>
+						<Header />
+						<Route exact path={'/'} component={(props) => <BookList {...props} status="pending" />} />
+						<Route
+							exact
+							path={'/completed'}
+							component={(props) => <BookList {...props} status="completed" />}
+						/>
+						<Route
+							exact
+							path={'/reading'}
+							component={(props) => <BookList {...props} status="reading" />}
+						/>
+						<Route
+							exact
+							path={'/favorites'}
+							component={(props) => <BookList {...props} status={{ favorite: true }} />}
+						/>
+					</BooksContextProvider>
+				</AppContainer>
+			</Switch>
+		</Router>
 	);
 };
 

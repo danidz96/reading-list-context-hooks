@@ -26,7 +26,7 @@ const AppContainer = styled.div`
 const App = () => {
 	const { theme } = React.useContext(ThemeContext);
 	return (
-		<Router>
+		<Router basename={process.env.PUBLIC_URL}>
 			<Switch>
 				<AppContainer theme={theme}>
 					<BooksContextProvider>

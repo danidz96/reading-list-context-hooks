@@ -31,20 +31,24 @@ const App = () => {
 				<AppContainer theme={theme}>
 					<BooksContextProvider>
 						<Header />
-						<Route exact path={'/'} component={(props) => <BookList {...props} status="pending" />} />
 						<Route
 							exact
-							path={'/completed'}
+							path={process.env.PUBLIC_URL + '/'}
+							component={(props) => <BookList {...props} status="pending" />}
+						/>
+						<Route
+							exact
+							path={process.env.PUBLIC_URL + '/completed'}
 							component={(props) => <BookList {...props} status="completed" />}
 						/>
 						<Route
 							exact
-							path={'/reading'}
+							path={process.env.PUBLIC_URL + '/reading'}
 							component={(props) => <BookList {...props} status="reading" />}
 						/>
 						<Route
 							exact
-							path={'/favorites'}
+							path={process.env.PUBLIC_URL + '/favorites'}
 							component={(props) => <BookList {...props} status={{ favorite: true }} />}
 						/>
 					</BooksContextProvider>
